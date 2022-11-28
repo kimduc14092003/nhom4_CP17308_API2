@@ -12,5 +12,8 @@ function route(app){
     app.use('/image', imageRouter);
     app.use('/cart', cartRouter);
     app.use('/cartItem', cartItemRouter);
+    
+    //test
+    app.use('/',productRouter);
 }
 module.exports = route;
