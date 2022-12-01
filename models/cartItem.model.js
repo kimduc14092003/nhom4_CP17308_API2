@@ -57,7 +57,7 @@ CartItem.getByType=function(data,result){
             console.log('err CartItem model get by type\n'+err);
         }
         else{
-            result({cartItem});
+            result(cartItem);
         }
     })
 }

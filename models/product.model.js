@@ -62,7 +62,7 @@ Product.getByType=function(data,result){
                 console.log('err Product model get by Customer\n'+err);
             }
             else{
-                result({products});
+                result(products);
             }
         })
     }
@@ -72,7 +72,7 @@ Product.getByType=function(data,result){
                 console.log('err Product model get by type\n'+err);
             }
             else{
-                result({products});
+                result(products);
             }
         })
     }
