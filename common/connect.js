@@ -17,4 +17,11 @@ connection.connect(function(err){
     }
 });
 
+// let connection2 = await pool.getConnection();
+// try {
+//     // Run one query 
+// } finally {
+//     connection.release();
+// }
+
 module.exports=connection;

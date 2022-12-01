@@ -17,7 +17,6 @@ Product.read=function(result){
         console.log('err Product model read \n'+err);
     }
     else{
-        console.log('not err Product model read \n');
         result(products);
     }});
 }
@@ -56,13 +55,26 @@ Product.delete=function(data,result){
 }
 
 Product.getByType=function(data,result){
-    db.query("SELECT * FROM sanpham WHERE MaLoai=? ",data,function (err,products){
-        if(err){
-            console.log('err Product model get by type\n'+err);
-        }
-        else{
-            result({products});
-        }
-    })
+    if(data=='M'||data=='F'||data=='K')
+    {
+        db.query('SELECT * FROM sanpham WHERE MaSanPham LIKE "'+data+'%"',function (err,products){
+            if(err){
+                console.log('err Product model get by Customer\n'+err);
+            }
+            else{
+                result({products});
+            }
+        })
+    }
+    else {
+        db.query('SELECT * FROM sanpham WHERE MaLoai=?',data,function (err,products){
+            if(err){
+                console.log('err Product model get by type\n'+err);
+            }
+            else{
+                result({products});
+            }
+        })
+    }
 }
 module.exports = Product;
