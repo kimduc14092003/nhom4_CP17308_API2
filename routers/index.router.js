@@ -4,6 +4,8 @@ const productRouter= require('./product.router');
 const imageRouter= require('./image.router');
 const cartRouter= require('./cart.router');
 const cartItemRouter= require('./cartItem.router');
+const billRouter= require('./bill.router');
+const billItemRouter= require('./billItem.router')
 
 function route(app){
     app.use('/user', userRouter);
@@ -12,6 +14,8 @@ function route(app){
     app.use('/image', imageRouter);
     app.use('/cart', cartRouter);
     app.use('/cartItem', cartItemRouter);
+    app.use('/bill', billRouter);
+    app.use('/billItem', billItemRouter);
     
     //test
     app.use('/',productRouter);

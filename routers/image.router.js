@@ -2,19 +2,19 @@ const express = require('express');
 const router= express.Router();
 const imageController = require('../controllers/image.controller');
 
-//product read
+//image read
 router.get('/read',imageController.read);
 
-//product create
+//image create
 router.post('/create',imageController.create);
 
-//product update
+//image update
 // router.post('/update',imageController.update);
 
-//product delete
+//image delete
 // router.post('/delete',imageController.delete);
 
-//product get by id
+//image get by id
 router.get('/:slug',imageController.getById);
 
 module.exports = router;

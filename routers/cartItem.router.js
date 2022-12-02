@@ -2,19 +2,19 @@ const express = require('express');
 const router= express.Router();
 const cartItemController = require('../controllers/cartItem.controller');
 
-//product read
+//cartItem read
 router.get('/read',cartItemController.read);
 
-//product create
+//cartItem create
 router.post('/create',cartItemController.create);
 
-//product update
+//cartItem update
 router.post('/update',cartItemController.update);
 
-//product delete
+//cartItem delete
 router.post('/delete',cartItemController.delete);
 
-//product get by type
+//cartItem get by type
 router.get('/:slug',cartItemController.getByType);
 
 
