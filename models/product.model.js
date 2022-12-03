@@ -7,14 +7,17 @@ const Product =function(product){
     this.description=product.description;
     this.type=product.type;
     this.amount=product.amount;
-
 }
 
 Product.read=function(result){
     db.query('SELECT * FROM sanpham',function (err,products){
     if(err)
     {
-        console.log('err Product model read \n'+err);
+        if(err=="Can't add new command when connection is in closed state"){
+            let db= require('../common/connect');
+            console.log("add new db");
+        }
+        console.log('err Product model read \n'+err+'\n');
     }
     else{
         result(products);
