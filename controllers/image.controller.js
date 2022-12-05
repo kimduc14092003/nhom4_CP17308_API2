@@ -2,7 +2,7 @@ const Image = require('../models/image.model');
 
 exports.read=function(req, res){
     Image.read(function(data){
-        res.send({data});
+        res.send(data);
     })
 }
 
