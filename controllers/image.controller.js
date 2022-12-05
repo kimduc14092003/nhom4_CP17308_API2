@@ -2,11 +2,7 @@ const Image = require('../models/image.model');
 
 exports.read=function(req, res){
     Image.read(function(data){
-<<<<<<< HEAD
-        res.send(data);
-=======
         res.send({result: data});
->>>>>>> parent of 5db9ed6 (test)
     })
 }
 
