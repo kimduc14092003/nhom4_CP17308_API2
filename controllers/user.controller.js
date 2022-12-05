@@ -1,8 +1,8 @@
 const User = require('../models/user.model');
 
 exports.login=function(req, res){
-    const username = req.body.username;
-    const password = req.body.password;
+    const username = req.body.TaiKhoan;
+    const password = req.body.MatKhau;
     User.login(username,password,function(result){
         res.send({result: result});
     });
