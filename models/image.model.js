@@ -1,34 +1,34 @@
 const db= require('../common/connect');
 
 const Image =function(image){
-    this.id=product.id;
-    this.link=product.link;
+    this.id=image.id;
+    this.link=image.link;
 }
 
 Image.read=function(result){
-    db.query('SELECT * FROM hinhanh',function (err,product){
+    db.query('SELECT * FROM hinhanh',function (err,image){
     if(err)
     {
         console.log('err Image model read \n'+err);
     }
     else{
-        result(product);
+        result(image);
     }});
 }
 
 Image.getById=function(data,result){
-    db.query(' SELECT * FROM hinhanh WHERE 	MaSanPham= ?',data,function (err,product){
+    db.query(' SELECT * FROM hinhanh WHERE 	MaSanPham= ?',data,function (err,image){
     if(err)
     {
         console.log('err Image model getById \n'+err);
     }
     else{
-        result(product);
+        result(image);
     }});
 }
 
 Image.create=function(data,result){
-    db.query("INSERT INTO hinhanh SET ?",data,function (err,product){
+    db.query("INSERT INTO hinhanh SET ?",data,function (err,image){
         if(err){
             console.log('err Image model create\n'+err);
         }
