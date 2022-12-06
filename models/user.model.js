@@ -32,4 +32,26 @@ User.register=function(data,result){
         }
     })
 }
+
+User.count=function(data,result){
+    db.query('SELECT COUNT(*) FROM khachhang',function(err,count){
+        if(err){
+            console.log('user register count err: '+err);
+        }
+        else {
+            result(...count)
+        }
+    })
+}
+
+User.read=function(result){
+    db.query('SELECT * FROM khachhang',function (err,users){
+    if(err)
+    {
+        console.log('err user model read \n'+err);
+    }
+    else{
+        result(users);
+    }});
+}
 module.exports=User;

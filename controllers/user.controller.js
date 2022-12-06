@@ -14,3 +14,15 @@ exports.register=function(req, res){
         res.send({result: result});
     });
 }
+
+exports.count=function(req, res){
+    const data=req.body;
+    User.count(data,function(result){
+        res.send({result: result});
+    });
+}
+exports.read=function(req, res){
+    User.read(function(result){
+        res.send({result: result});
+    });
+}
