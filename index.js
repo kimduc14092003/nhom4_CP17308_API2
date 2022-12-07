@@ -5,10 +5,13 @@ const host='localhost';
 const app = express();
 const route= require('./routers/index.router');
 const bodyParser = require('body-parser')
+const cors = require("cors");
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
+//fix CORS disabled
+app.use(cors());
 // parse application/json
 app.use(bodyParser.json())
 
