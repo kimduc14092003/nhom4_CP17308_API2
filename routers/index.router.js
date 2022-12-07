@@ -1,3 +1,4 @@
+const adminRouter=require('./admin.router');
 const userRouter=require('./user.router');
 const typeRouter= require('./type.router');
 const productRouter= require('./product.router');
@@ -8,6 +9,7 @@ const billRouter= require('./bill.router');
 const billItemRouter= require('./billItem.router')
 
 function route(app){
+    app.use('/admin', adminRouter);
     app.use('/user', userRouter);
     app.use('/type', typeRouter);
     app.use('/product', productRouter);
