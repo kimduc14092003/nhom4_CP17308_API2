@@ -17,7 +17,7 @@ User.login=function(username,password,result){
             result(user[0]);
         }
         else {
-            result('tai khoan hoac mat khau khong chinh xac');
+            result('Failed to login');
         }
     })
 }
