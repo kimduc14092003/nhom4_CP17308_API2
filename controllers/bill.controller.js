@@ -38,6 +38,9 @@ exports.getByUserState=function(req, res){
     let data='';
     switch (req.url) {
         case '/delivering':
+            data='';
+            break;
+        case '/delivering':
             data='Đang vận chuyển';
             break;
         case '/received':
@@ -49,7 +52,15 @@ exports.getByUserState=function(req, res){
         default:
             break;
     }
-    Bill.getByUserState(data,function(response){
-        res.send({result:response});
-    })
+    if(data){
+        console.log(data);
+        Bill.getByUserState(data,function(response){
+            res.send({result:response});
+        })
+    }
+    else{
+        Bill.read(function(data){
+            res.send({result: data});
+        });
+    }
 };
