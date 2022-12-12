@@ -37,7 +37,7 @@ exports.getByUserID=function(req, res){
 exports.getByUserState=function(req, res){
     let data='';
     switch (req.url) {
-        case '/delivering':
+        case '/all':
             data='';
             break;
         case '/delivering':
