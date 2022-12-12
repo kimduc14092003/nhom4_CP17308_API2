@@ -33,3 +33,23 @@ exports.getByUserID=function(req, res){
         res.send({result:response});
     })
 };
+
+exports.getByUserState=function(req, res){
+    let data='';
+    switch (req.url) {
+        case '/delivering':
+            data='Đang vận chuyển';
+            break;
+        case '/received':
+            data='Đã nhận hàng';
+            break;
+        case '/canceled':
+            data='Đã hủy';
+            break;
+        default:
+            break;
+    }
+    Bill.getByUserState(data,function(response){
+        res.send({result:response});
+    })
+};

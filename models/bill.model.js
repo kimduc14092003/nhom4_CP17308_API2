@@ -58,4 +58,15 @@ Bill.getByUserID=function(data,result){
         }
     })
 }
+
+Bill.getByUserState=function(data,result){
+    db.query("SELECT * FROM donhang WHERE LichSuDonHang=? ",data,function (err,bill){
+        if(err){
+            console.log('err Bill model get by UserID\n'+err);
+        }
+        else{
+            result(bill);
+        }
+    })
+}
 module.exports = Bill;

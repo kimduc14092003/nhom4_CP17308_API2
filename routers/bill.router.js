@@ -14,6 +14,11 @@ router.post('/update',billController.update);
 //bill delete
 router.post('/delete',billController.delete);
 
+//bill get by State of Order
+router.get('/delivering',billController.getByUserState);
+router.get('/received',billController.getByUserState);
+router.get('/canceled',billController.getByUserState);
+
 //bill get by UserID
 router.get('/:slug',billController.getByUserID);
 
